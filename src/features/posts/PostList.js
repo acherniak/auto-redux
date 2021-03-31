@@ -13,7 +13,7 @@ export function PostList() {
 	
 	return (
 		<div className="panel">
-			<div className="capt">{posts.length} Posts</div>
+			<div className="flex"><a href="React Code Challenge.pdf" target="_blank">task</a><div className="capt flex1">{posts.length} Posts</div></div>
 			<div className="flex1 scroll">
 				{ posts.map((p)=>
 					<div key={p.id} className={`post ${p.id===cur?'select':''}`}

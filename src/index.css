@@ -4,10 +4,11 @@ body { margin: 0; font-family: sans-serif; }
 .flex-col { flex-direction: column;}
 .flex1 { flex:1 }
 .scroll { overflow:auto;padding:10px; }
-.capt { font-variant: small-caps;padding:10px;}
+.capt { font-variant: small-caps;padding:10px; text-align: center;}
 .panel {height:100%; display:flex; flex-direction: column;flex:1}
 .post { margin: 5px; padding:5px;cursor: pointer; }
 .comm { margin: 5px; }
 .select { background-color: lightgray; }
 .w60 { width: 60px }
 .m10 { margin: 10px }
+.right { float: right }
