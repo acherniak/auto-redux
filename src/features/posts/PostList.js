@@ -4,13 +4,13 @@ import { fetchPosts, selectPosts } from './postsSlice'
 import { showComms } from '../comments/commentsSlice'
 
 export function PostList() {
-	const [cur, setCur] = useState(),
+	const [cur, setCur] = useState(0),
 		loaded = useSelector(state => state.posts.loaded),
 		dispatch = useDispatch(),
 		posts = useSelector(selectPosts)
 
 	useEffect(() => { if (!loaded) { dispatch(fetchPosts()) }	})
-	
+
 	return (
 		<div className="panel">
 			<div className="flex"><a href="React Code Challenge.pdf" target="_blank">task</a><div className="capt flex1">{posts.length} Posts</div></div>

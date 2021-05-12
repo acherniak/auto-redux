@@ -14,8 +14,8 @@ export function Comments() {
 		}
 
 	useEffect(() => { if (!loaded) { dispatch(fetchComms()) }	})
-
-	return !curComms.length? '':(
+	
+	return (!curComms.length)? null:(
 		<div className="panel">
 			<div className="capt">{curComms.length} Comments</div>
 			<div className="flex1 scroll">

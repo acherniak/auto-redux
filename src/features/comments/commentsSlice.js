@@ -3,19 +3,17 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchComms = createAsyncThunk('posts/fetchComms', async () => 
   (await fetch('https://jsonplaceholder.typicode.com/comments')).json())
 
-let postId;
-
 export const commentsSlice = createSlice({
   name: 'comments',
   initialState: {
     all: [], curComms: []
   },
   reducers: {
-		showComms(state, action) { postId = action.payload
-			state.curComms = !postId? [] : state.all.filter(c=>c.postId === postId)
+		showComms(state, action) { state.postId = action.payload;
+			state.curComms = !state.postId? [] : state.all.filter(c=>c.postId === state.postId)
 		},
 		addComm(state, action) {
-			state.curComms.push(Object.assign(action.payload, { postId, id: state.all.length+1}))
+			state.curComms.push(Object.assign(action.payload, { postId: state.postId, id: state.all.length+1}))
 		}
   },
 	extraReducers: {
